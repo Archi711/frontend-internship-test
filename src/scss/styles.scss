@@ -1,2 +1,99 @@
 // Here goes your CSS
 @import 'layout/main';
+$white: #fff;
+$black: #000;
+
+$background-color: $white;
+$font-color: $black;
+
+$form-item-spacing: 1rem;
+$form-close-btn-size: 24px;
+
+* {
+  box-sizing: border-box;
+}
+
+.popup {
+  background-color: $background-color;
+  border-radius: 6px;
+  box-sizing: content-box;
+  left: 50%;
+  padding: 0 $form-item-spacing * 2;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+
+  &-hidden {
+    display: none;
+  }
+
+  &-heading {
+    font-family: 'Lobster', cursive;
+    margin-top: 2rem;
+  }
+
+  &-form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+
+    & > * {
+      width: 100%;
+    }
+
+    & > fieldset {
+      border: 0;
+      padding: 0;
+      text-align: left;
+    }
+  }
+
+}
+
+.btn-close {
+  align-items: center;
+  background-color: $black;
+  border: 0;
+  border-radius: 50%;
+  color: $white;
+  cursor: pointer;
+  display: flex;
+  font-variant: small-caps;
+  font-weight: 800;
+  height: $form-close-btn-size;
+  justify-content: center;
+  line-height: $form-close-btn-size;
+  position: absolute;
+  right: -.5 * $form-item-spacing;
+  top: -.5 * $form-item-spacing;
+  width: $form-close-btn-size;
+}
+
+input {
+  font-size: .8em;
+  padding: $form-item-spacing;
+
+  &:not([type='checkbox']) {
+    border: 1px solid lighten($black, 40%);
+  }
+
+  & + * {
+    margin-top: $form-item-spacing;
+  }
+}
+
+.btn-submit {
+  background-color: $black;
+  border: 0;
+  color: $white;
+  cursor: pointer;
+  font-size: $form-item-spacing;
+  font-variant: small-caps;
+  margin: $form-item-spacing;
+  margin-bottom: $form-item-spacing * 2;
+  padding: .8 * $form-item-spacing;
+}
